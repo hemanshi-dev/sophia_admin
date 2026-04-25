@@ -2,14 +2,31 @@
   "name": "frontcompanion",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/aicompanion/admin",
+  "proxy": "https://shuchiai.com/companion",
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@reduxjs/toolkit": "^2.11.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.13.4",
+    "bootstrap": "^5.3.8",
+    "feather-icons": "^4.29.2",
+    "jquery": "^4.0.0",
+    "perfect-scrollbar": "^1.5.6",
     "react": "^19.2.4",
+    "react-data-table-component": "^7.7.0",
     "react-dom": "^19.2.4",
+    "react-dropzone": "^15.0.0",
+    "react-feather": "^2.0.10",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.5",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -24,6 +41,10 @@
       "react-app/jest"
     ]
   },
+  "eslintIgnore": [
+    "src/assets/vendors/js/vendors.min.js",
+    "src/assets/css/*.css"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -35,5 +56,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   }
 }
