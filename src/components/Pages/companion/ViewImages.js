@@ -391,7 +391,7 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                           Select All
                         </label>
                       </div>
-                      {/* {selectedItemIds.length > 0 && (
+                      {selectedItemIds.length > 0 && (
                         <button 
                           className="btn btn-danger btn-sm d-flex align-items-center gap-1"
                           onClick={() => setShowBulkDeleteModal(true)}
@@ -399,7 +399,7 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                           <Trash size={14} />
                           Delete ({selectedItemIds.length})
                         </button>
-                      )} */}
+                      )}
                     </div>
                   )}
                   <button 
@@ -503,7 +503,7 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                           />
                         </div>
 
-                        <button
+                        {/* <button
                           type="button"
                           className="btn btn-danger delete-overlay-btn p-2"
                           onClick={(e) => {
@@ -529,7 +529,7 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                           title="Delete Image"
                         >
                           <Trash2 size={16} />
-                        </button>
+                        </button> */}
                       </div>
                     );
                   })}

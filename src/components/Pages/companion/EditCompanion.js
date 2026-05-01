@@ -140,9 +140,9 @@ const EditCompanion = ({ dispatch, companions_list, update_companion }) => {
           file
         }));
         if (type === "android") {
-          setAndroidImages([...androidImages, ...newItems]);
+          setAndroidImages(newItems);
         } else {
-          setIosImages([...iosImages, ...newItems]);
+          setIosImages(newItems);
         }
       }
       e.target.value = "";
@@ -276,7 +276,7 @@ const EditCompanion = ({ dispatch, companions_list, update_companion }) => {
               <DropZone
                 label="Upload Android Images"
                 accept="image/*"
-                multiple
+                multiple={false}
                 onChange={(e) => handleImageChange(e, "android")}
                 disabled={loading}
                 previewImages={androidImages.map(img => img.url)}
@@ -305,7 +305,7 @@ const EditCompanion = ({ dispatch, companions_list, update_companion }) => {
               <DropZone
                 label="Upload iOS Images"
                 accept="image/*"
-                multiple
+                multiple={false}
                 onChange={(e) => handleImageChange(e, "ios")}
                 disabled={loading}
                 previewImages={iosImages.map(img => img.url)}

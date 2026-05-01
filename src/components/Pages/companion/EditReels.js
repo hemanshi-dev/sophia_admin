@@ -98,7 +98,7 @@ const EditReels = ({ dispatch, companions_list, reels_list }) => {
                 url: URL.createObjectURL(file),
                 file,
             }));
-            setVideos((prev) => [...prev, ...newItems]);
+            setVideos(newItems);
             e.target.value = "";
         }
     };
@@ -228,7 +228,7 @@ const EditReels = ({ dispatch, companions_list, reels_list }) => {
                                     <DropZone
                                         label="Upload Videos"
                                         accept="video/*"
-                                        multiple
+                                        multiple={false}
                                         onChange={handleVideoChange}
                                         disabled={loading}
                                         previewImages={videos.map(vid => vid.url)}

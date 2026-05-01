@@ -5,6 +5,7 @@ import ShuchiLogo from "../../assets/images/logo.png"
 import Babysnap from "../../assets/images/AppIconmarketing.png"
 import ProductSnap from "../../assets/images/psapp_fav_icon.jpg"
 import aiCompanion from "../../assets/images/sophia_logo.png"
+import wallpaper from "../../assets/images/wallpaper.png"
 
 const Sidebar = ({ toggleMobileSidebar }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const Sidebar = ({ toggleMobileSidebar }) => {
       name: 'Wallpaper',
       url: 'http://localhost:5173/wallpaper_admin/home',
       url_prod: 'https://shuchiai.com/wallpaper_admin/home',
-      icon: ProductSnap,
+      icon: wallpaper,
     }
   ];
 

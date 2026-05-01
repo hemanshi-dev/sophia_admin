@@ -6,6 +6,7 @@ import Babysnap from "../../../assets/images/babysnap.png"
 import producsnap from "../../../assets/images/Productsnap_logo.png"
 import Companion from "../../../assets/images/Companion.png"
 import aiGirlfriend from "../../../assets/images/sophia.png"
+import wallpaper from "../../../assets/images/wallpaper.png"
 import "../../../index.css"
 const SelectAdmin = ({ onLogout }) => {
   const navigate = useNavigate();
@@ -36,11 +37,11 @@ const SelectAdmin = ({ onLogout }) => {
       url_prod: 'https://shuchiai.com/aicompanion/admin/companion',
       icon: aiGirlfriend,
     },
-     {
+    {
       name: 'Wallpaper',
       url: 'http://localhost:5173/wallpaper_admin/home',
       url_prod: 'https://shuchiai.com/wallpaper_admin/home',
-      icon: aiGirlfriend,
+      icon: wallpaper,
     }
   ];
 

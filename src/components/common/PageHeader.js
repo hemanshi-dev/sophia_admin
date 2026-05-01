@@ -178,14 +178,20 @@ const PageHeader = () => {
     config[location.pathname] ||
     (isEditPage && {
       title: "Edit Companion",
-      breadcrumb: ["Companion", "Edit"],
+   breadcrumb: [
+  { label: "Companion", path: "/companion" },
+  { label: "Edit" }
+],
       buttonText: "Back",
       buttonAction: () => navigate("/companion"),
       showImageModule: true, // ✅ Show dropdown on edit page too
     }) ||
     (isReelEditPage && {
       title: "Edit Reel",
-      breadcrumb: ["Reels", "Edit"],
+    breadcrumb: [
+  { label: "Reels", path: "/reels-list" },
+  { label: "Edit" }
+],
       buttonText: "Back",
       buttonAction: () => navigate("/reels-list"),
     });
@@ -219,11 +225,20 @@ const PageHeader = () => {
             <h5 className="m-b-10">{current.title}</h5>
           </div>
           <ul className="breadcrumb">
-            {current.breadcrumb.map((item, index) => (
-              <li key={index} className="breadcrumb-item">
-                {item}
-              </li>
-            ))}
+          {current.breadcrumb.map((item, index) => (
+  <li key={index} className="breadcrumb-item">
+    {item.path ? (
+      <span
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate(item.path)}
+      >
+        {item.label}
+      </span>
+    ) : (
+      item.label
+    )}
+  </li>
+))}
           </ul>
         </div>
 

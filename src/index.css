@@ -425,11 +425,11 @@ justify-content: center;
 margin-bottom: 8px;
 }
 
-/* .admin-logo-img {
-max-width: 100%;
+.admin-logo-img {
+/* max-width: 100%; */
 max-height: 100%;
-object-fit: contain;
-} */
+object-fit: cover;
+}
 
 .admin-logo-emoji {
 font-size: 48px;
@@ -759,24 +759,27 @@ box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
 
 
 .admin-panel-card.card-black {
-  border: 2px solid transparent;
+    border: 2px solid transparent;
   border-radius: 16px;
+  color: #fff;
   padding: 20px;
 background:
   /* inner */
-  linear-gradient(
-    135deg,
-    #000000 0%,
-    #050505 100%
-  ) padding-box,
+  linear-gradient(135deg,rgba(0, 0, 0, 1) 0%, rgba(67, 67, 67, 1) 50%, rgba(71, 68, 68, 1) 100%) padding-box,
   /* border */
-  linear-gradient(
-    135deg,
-    #1a1a1a 0%,
-    #000000 100%
-  ) border-box;
+  linear-gradient(135deg,rgba(0, 0, 0, 1) 0%, rgba(67, 67, 67, 1) 50%, rgba(71, 68, 68, 1) 100%) border-box;
+}
+
+
+.admin-panel-title.wallpaper{
+  color: #fff;
 }
 
 .admin-panel-card.card-black:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+   box-shadow: 0 12px 25px -10px rgba(0, 0, 0, 0.7);
+}
+
+.card-black .admin-logo-img {
+  max-height: 50px;
+  width: auto;
 }

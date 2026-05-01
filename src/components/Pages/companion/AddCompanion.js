@@ -267,7 +267,7 @@ const AddCompanion = ({ dispatch, add_companion }) => {
                   <DropZone
                     label="Upload Android Images"
                     accept="image/*"
-                    multiple
+                    multiple={false}
                     onChange={(e) => handleImageChange(e, "android")}
                     disabled={loading}
                     previewImages={androidPreviews}
@@ -287,7 +287,7 @@ const AddCompanion = ({ dispatch, add_companion }) => {
                   <DropZone
                     label="Upload iOS Images"
                     accept="image/*"
-                    multiple
+                    multiple={false}
                     onChange={(e) => handleImageChange(e, "ios")}
                     disabled={loading}
                     previewImages={iosPreviews}

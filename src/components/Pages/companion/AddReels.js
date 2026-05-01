@@ -190,7 +190,7 @@ const AddReels = ({ dispatch, companions_list }) => {
                                     <DropZone
                                         label="Upload Videos"
                                         accept="video/*"
-                                        multiple
+                                        multiple={false}
                                         onChange={handleVideoChange}
                                         disabled={loading}
                                         previewImages={videoPreviews}
