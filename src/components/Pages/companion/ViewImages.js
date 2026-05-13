@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,8 +9,8 @@ import { Edit, Trash2, Eye, X, Trash, Plus, Upload } from "react-feather";
 import DeleteModal from "../../common/DeleteModal";
 
 const ImageCell = ({ row }) => {
-  const BasePath = 'https://sin1.contabostorage.com/292910c350ea4c699a44f11998b096be:my-storage-bucket/'
-  const imageUrl = BasePath + row.url || row.filename || row.image || (typeof row === 'string' ? row : "");
+  // const BasePath = 'https://sin1.contabostorage.com/292910c350ea4c699a44f11998b096be:my-storage-bucket/'
+  const imageUrl =  row.url || row.filename || row.image || (typeof row === 'string' ? row : "");
   const [imgError, setImgError] = useState(!imageUrl);
 
   return (
@@ -444,8 +445,8 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                   overflowY: "auto"
                 }}>
                   {selectedImages.map((img, index) => {
-                    const BasePath = 'https://sin1.contabostorage.com/292910c350ea4c699a44f11998b096be:my-storage-bucket/'
-                    const imageUrl = BasePath + (img.url || img.filename || img.image || (typeof img === 'string' ? img : ""));
+                    // const BasePath = 'https://sin1.contabostorage.com/292910c350ea4c699a44f11998b096be:my-storage-bucket/'
+                    const imageUrl = img.url || img.filename || img.image || (typeof img === 'string' ? img : "");
                     return (
                       <div 
                         key={index}
@@ -484,22 +485,39 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
                           onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
                         />
                         
-                        {/* Checkbox for selection */}
-                        <div 
+                        {/* Checkbox with extended clickable area */}
+                        {/* Invisible extended hit area - 15px padding around checkbox */}
+                        <div
                           style={{
                             position: "absolute",
                             top: "10px",
                             left: "10px",
-                            zIndex: 11
+                            zIndex: 11,
+                            width: "102px",
+                            height: "102px",
+                            marginTop: "-40px",
+                            marginLeft: "-40px",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            // border: "2px dashed rgba(255, 0, 0, 0.5)"
                           }}
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleImageSelection(img.id || img._id);
+                          }}
                         >
-                          <input 
+                          <input
                             type="checkbox"
                             className="form-check-input shadow-sm"
-                            style={{ width: "22px", height: "22px", cursor: "pointer" }}
+                            style={{ width: "22px", height: "22px", cursor: "pointer", margin: 0 }}
                             checked={selectedItemIds.includes(img.id || img._id)}
-                            onChange={() => toggleImageSelection(img.id || img._id)}
+                            onChange={(e) => {
+                              e.stopPropagation();
+                              toggleImageSelection(img.id || img._id);
+                            }}
+                            onClick={(e) => e.stopPropagation()}
                           />
                         </div>
 
@@ -652,11 +670,11 @@ const ViewImages = ({ dispatch, companions_list, gallery }) => {
           <div style={{ padding: '20px 20px 0' }}>
             <img
               src={
-                'https://sin1.contabostorage.com/292910c350ea4c699a44f11998b096be:my-storage-bucket/' +
-                (selectedImageForModal.url ||
+              
+                selectedImageForModal.url ||
                   selectedImageForModal.filename ||
                   selectedImageForModal.image ||
-                  (typeof selectedImageForModal === 'string' ? selectedImageForModal : ''))
+                  (typeof selectedImageForModal === 'string' ? selectedImageForModal : '')
               }
               alt="Full View"
               style={{

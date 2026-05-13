@@ -247,18 +247,16 @@ const PageHeader = () => {
           {/* ✅ Image Module Dropdown - only on /companion route */}
           {current.showImageModule && (
             <div className="dropdown" ref={ddRef}>
-              <button
-                type="button"
-                className="btn btn-outline-secondary d-flex align-items-center gap-2"
-                onClick={() => setDdOpen((prev) => !prev)}
-              >
-                <i className="feather-image" style={{ fontSize: 15 }}></i>
-                <span>{dropdownLabel()}</span>
-                <i
-                  className={`feather-chevron-${ddOpen ? "up" : "down"}`}
-                  style={{ fontSize: 13 }}
-                ></i>
-              </button>
+          
+<button
+  type="button"
+  className="btn btn-outline-secondary d-flex align-items-center gap-2"
+  onClick={() => handleModuleSelect("view")}  // ← directly call handleModuleSelect
+>
+  <i className="feather-image" style={{ fontSize: 15 }}></i>
+  <span>{dropdownLabel()}</span>
+  <i className="feather-image" style={{ fontSize: 13 }}></i>
+</button>
 
               {ddOpen && (
                 <div
