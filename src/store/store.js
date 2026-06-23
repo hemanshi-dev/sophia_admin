@@ -13,7 +13,9 @@ import {
   GetAllFeedback_reducer,
   GetAllReelReport_reducer,
   Gallery_reducer,
+  LiveMode_reducer,
 } from "./reducer/useReducer";
+
 const store = configureStore({
   reducer: {
     companion: AddCompanion_reducer,
@@ -29,6 +31,7 @@ const store = configureStore({
     feedback_list: GetAllFeedback_reducer,
     reel_report_all: GetAllReelReport_reducer,
     gallery: Gallery_reducer,
+    live_mode: LiveMode_reducer,
   },
 });
 

@@ -17,6 +17,7 @@ import EditReels from "./components/Pages/companion/EditReels";
 import Feedback from "./components/Pages/companion/Feedback";
 import ReelReport from "./components/Pages/companion/ReelReport";
 import EditImages from "./components/Pages/companion/EditImages";
+import LiveMode from "./components/Pages/companion/LiveMode";
 
 function App() {
   const [isMini, setIsMini] = useState(false);
@@ -119,6 +120,7 @@ function App() {
           <Route path="/images/edit/:id" element={<EditImages />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/reel-report" element={<ReelReport />} />
+          <Route path="/live-mode" element={<LiveMode />} />
           <Route path="/reels" element={<Navigate to="/reels-list" replace />} />
         </Route>
 

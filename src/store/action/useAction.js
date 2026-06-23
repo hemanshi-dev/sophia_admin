@@ -267,3 +267,27 @@ export const SetReelsPagination = (page, rowsPerPage) => ({
   type: types.SET_REELS_PAGINATION,
   payload: { page, rowsPerPage },
 });
+
+/**
+ * LIVE MODE ACTIONS
+ */
+
+export function GetLiveMode(setLoading) {
+  return async (dispatch) => {
+    try {
+      const data = await handleRequest(apiClient.get("/companion/api/admin/live-mode"), setLoading);
+      dispatch({ type: types.GET_LIVE_MODE, payload: data });
+      return data;
+    } catch (error) { throw error; }
+  };
+}
+
+export function UpdateLiveMode(payload, setLoading) {
+  return async (dispatch) => {
+    try {
+      const data = await handleRequest(apiClient.post("/companion/api/admin/live-mode", payload), setLoading);
+      dispatch({ type: types.UPDATE_LIVE_MODE, payload: data });
+      return data;
+    } catch (error) { throw error; }
+  };
+}

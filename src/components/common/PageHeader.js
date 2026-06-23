@@ -169,6 +169,12 @@ const PageHeader = () => {
       buttonText: "Back",
       buttonAction: () => navigate("/reels-list"),
     },
+    "/live-mode": {
+      title: "Live Mode Settings",
+      breadcrumb: ["Live Mode"],
+      buttonText: null,
+      buttonAction: null,
+    },
   };
 
   const isEditPage = location.pathname.startsWith("/companion/edit");
@@ -305,6 +311,7 @@ const PageHeader = () => {
           )}
 
           {/* Main Action Button */}
+          {current.buttonAction && (
           <button
             type="button"
             className="btn btn-primary"
@@ -313,6 +320,7 @@ const PageHeader = () => {
             <i className="feather-plus me-2"></i>
             {current.buttonText}
           </button>
+          )}
 
         </div>
       </div>

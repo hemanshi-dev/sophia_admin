@@ -238,3 +238,14 @@ export function Gallery_reducer(state = { data: [], loading: false, isLoaded: fa
       return state;
   }
 }
+
+export function LiveMode_reducer(state = { data: null, loading: false, isLoaded: false }, action) {
+  switch (action.type) {
+    case types.GET_LIVE_MODE:
+      return { data: action.payload, loading: false, isLoaded: true };
+    case types.UPDATE_LIVE_MODE:
+      return { data: action.payload, loading: false, isLoaded: true };
+    default:
+      return state;
+  }
+}

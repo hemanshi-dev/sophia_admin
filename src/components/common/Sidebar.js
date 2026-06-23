@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Airplay, Layers, Users, Instagram, MessageSquare, AlertCircle } from "react-feather";
+import { Airplay, Layers, Users, Instagram, MessageSquare, AlertCircle, ToggleRight } from "react-feather";
 import { NavLink, useLocation } from "react-router-dom";
 import ShuchiLogo from "../../assets/images/logo.png"
 import Babysnap from "../../assets/images/AppIconmarketing.png"
@@ -135,6 +135,18 @@ const Sidebar = ({ toggleMobileSidebar }) => {
               >
                 <span className="nxl-micon"><MessageSquare size={18} /></span>
                 <span className="nxl-mtext">Feedback</span>
+              </NavLink>
+            </li>
+            <li className="nxl-item">
+              <NavLink
+                to="/live-mode"
+                className={({ isActive }) =>
+                  "nxl-link " + (isActive ? "active-menu" : "")
+                }
+                onClick={closeMobileSidebar}
+              >
+                <span className="nxl-micon"><ToggleRight size={18} /></span>
+                <span className="nxl-mtext">Live Mode</span>
               </NavLink>
             </li>
           </ul>
