@@ -27,6 +27,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     () => !!localStorage.getItem("authorization") || !!getCookie("authToken")
   );
+  
 
   useEffect(() => {
     // Sync cookie → localStorage if needed
